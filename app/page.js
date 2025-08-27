@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Car, Sparkles } from 'lucide-react';
+import { Car, Sparkles, Zap } from 'lucide-react';
 import { useTheme } from '../components/ThemeProvider';
+import GameLuxuryButton from '../components/GameLuxuryButton';
 import Image from 'next/image';
 
 export default function Home() {
@@ -277,60 +278,32 @@ export default function Home() {
               From intimate gatherings to grand celebrations, make every moment legendary.
             </motion.p>
             
-            {/* CTA Buttons with enhanced effects */}
+            {/* CTA Buttons with gaming luxury effects */}
             <motion.div 
               className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1.2 }}
             >
-              <motion.button
-                whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: '0 20px 40px rgba(239, 68, 68, 0.5)'
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative px-10 py-4 bg-gradient-to-r from-red-500 via-red-600 to-red-700 text-white font-bold text-base rounded-full shadow-xl shadow-red-500/40 hover:shadow-red-500/60 transition-all duration-500 overflow-hidden border-2 border-red-400/50"
+              <GameLuxuryButton
+                variant="primary"
+                icon={Car}
+                hoverText="UNLEASH POWER"
               >
-                <span className="relative z-10 flex items-center gap-2 font-rajdhani font-bold uppercase tracking-wider">
-                  <Car className="w-5 h-5" />
-                  EXPLORE FLEET
-                  <motion.span
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    →
-                  </motion.span>
-                </span>
-                <motion.div
-                  animate={{
-                    background: [
-                      'linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent)',
-                      'linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent)'
-                    ]
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="absolute inset-0 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
-                />
-              </motion.button>
+                EXPLORE CATALOG
+              </GameLuxuryButton>
 
-              <motion.button
-                whileHover={{ 
-                  scale: 1.05,
-                  backgroundColor: '#ef4444',
-                  color: '#ffffff',
-                  borderColor: '#ef4444',
-                  boxShadow: '0 12px 24px rgba(239, 68, 68, 0.3)'
-                }}
-                whileTap={{ scale: 0.95 }}
-                className={`px-10 py-4 border-3 font-bold text-base rounded-full transition-all duration-300 backdrop-blur-md font-rajdhani uppercase tracking-wider ${
-                  isDark 
-                    ? 'border-red-400 text-red-300 bg-black/40 shadow-lg shadow-black/30' 
-                    : 'border-red-600 text-red-700 bg-white/90 shadow-xl shadow-red-500/20'
-                }`}
+              <GameLuxuryButton
+                variant="ghost"
+                icon={Zap}
+                hoverText="MORE DETAILS"
+                className={isDark 
+                  ? 'bg-black/40 shadow-lg shadow-black/30' 
+                  : 'bg-white/90 shadow-xl shadow-red-500/20'
+                }
               >
-                GET INSTANT QUOTE
-              </motion.button>
+                BOOK A CAR TODAY
+              </GameLuxuryButton>
             </motion.div>
 
             {/* Premium Stats Section */}

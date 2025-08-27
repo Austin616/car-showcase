@@ -52,7 +52,7 @@ const ButtonPopover = ({
             exit={{ opacity: 0, y: 10, scale: 0.9 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             className={`
-              absolute top-full mt-2 left-1/2 transform -translate-x-1/2 px-3 py-2 rounded-lg text-xs font-medium whitespace-nowrap shadow-lg z-50 pointer-events-none border ${
+              absolute top-full mt-2 left-1/2 transform -translate-x-1/2 px-3 py-2 rounded-lg text-xs font-medium font-exo2 whitespace-nowrap shadow-lg z-50 pointer-events-none border ${
                 isDark 
                   ? 'bg-red-900/90 text-red-100 border-red-600/50' 
                   : 'bg-red-50 text-red-800 border-red-200/50'

@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight, Car, Calendar, Users, Phone, Info, Sun, Moon, Home, Camera, Settings } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
 import ButtonPopover from './ButtonPopover';
+import GameLuxuryButton from './GameLuxuryButton';
 
 
 const Navbar = () => {
@@ -412,23 +413,20 @@ const Navbar = () => {
           </ButtonPopover>
           
           {/* Book Today Button */}
-          <ButtonPopover content="Book Your Dream Car">
             <Link href="/login">
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className={`
-                  inline-flex items-center justify-center rounded-xl border h-10 px-4 text-sm font-medium transition-all duration-200 ${
-                    isDark 
-                      ? 'border-red-600 bg-red-600 text-white hover:bg-red-700 hover:border-red-700' 
-                      : 'border-red-500 bg-red-500 text-white hover:bg-red-600 hover:border-red-600'
-                  }
-                `}
+            <GameLuxuryButton
+                variant={isDark ? "primary" : "ghost"}
+                size="compact"
+                icon={Calendar}
+                hoverText="DO IT NOW"
+                className={isDark 
+                  ? 'shadow-xl shadow-red-500/20' 
+                  : 'bg-white/90 shadow-xl shadow-red-500/20'
+                }
               >
-                Book Today
-              </motion.button>
+                BOOK TODAY
+              </GameLuxuryButton>
             </Link>
-          </ButtonPopover>
         </div>
       </div>
     </div>
